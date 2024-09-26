@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InputCounter</title>
+     <!--React, is an algo that manipulates the UI-->
+     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+     <!--React DOM is a support that actually support react-->
+     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+     <!--Babel, Transpiler, where this divides JS and HTML from JSX-->
+     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+     <style>
+        .set{
+            border-bottom: 1px solid;
+            padding-bottom: 1rem;
+        }
+     </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        function InputCounter(){
+            const [count ,setCount] = React.useState(0);
+            const [value,setValue] = React.useState("");//value=""
+            const increment = () =>{
+                    setCount(count + 1);
+            };
+            const decrement = () =>{
+                setCount(count - 1);
+            }
+            const handleValue = (event)=>{// handler function which actually handle any change in input element
+               // console.log(event.target.value);// event = onChange , Target = input, value
+               setValue(event.target.value);// we are using state variables to control the UI of page
+          }
+          return <div>
+                <div className="set">
+                    <input type="text" value={value}  
+                     onChange={handleValue}/> {/* we are handling the UI update of Input with state*/}
+                    <button>Set</button>
+                </div>
+                    <button onClick={increment}>+</button>
+                    <span>{count}</span>
+                    <button onClick={decrement}>-</button>
+                </div>       
+        }
+
+        ReactDOM.render(<InputCounter></InputCounter>,document.getElementById("root"));
+    </script>
+</body>
+</html>
+
+<!--when we control UI change of elements like input using state then these components
+ are known to be controlled components-->
