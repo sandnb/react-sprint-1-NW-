@@ -19,6 +19,7 @@
 </head>
 <body>
     <div id="root"></div>
+    <p>Vite!</p>
     <script type="text/babel">
         function InputCounter(){
             const [count ,setCount] = React.useState(0);
@@ -45,10 +46,18 @@
                 </div>       
         }
 
-        ReactDOM.render(<InputCounter></InputCounter>,document.getElementById("root"));
+       const root =  ReactDOM.createRoot(document.getElementById("root"));
+       root.render(<InputCounter></InputCounter>);
     </script>
 </body>
 </html>
 
-<!--when we control UI change of elements like input using state then these components
- are known to be controlled components-->
+<!--
+ 1)when we control UI change of elements like input using state then these components
+ are known to be controlled components
+ 2)We need a thing that creates us a normal react app structure and also i should provide
+ various functionality in order to build a complex application using react. 
+ 3)We have 3 main Bundlers where, Create-react-app(CRA),Vite,Parcel
+ 4) npm = node packge modules it is not, it is except node packge modules
+ 5) npm -> is a ocean of pacakges that server what ever a developer needs to build
+ 6) npx create-react-app=>to create a react app ,npx -> executing the npm modules->

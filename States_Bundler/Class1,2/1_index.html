@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>States</title>
+    <!--React, is an algo that manipulates the UI-->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <!--React DOM is a support that actually support react-->
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!--Babel, Transpiler, where this divides JS and HTML from JSX-->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        .counter{
+            border: 4px solid black;
+            padding: 10rem;
+        }
+        .count{
+            margin:30px;
+        }
+    </style>
+</head>
+<body>
+    <div  id="root"></div>
+    <script type="text/babel">
+        // Lets build a counter, where i have a + button to increase the value in counter
+        // whereas, - button should reduce the value in counter
+        //In react we can items using the state, as React follows the State varibles
+        //useState by defauly returns us the array of state variables as 1st argument, and 
+        // it gives setterfunction that helps to update the state variable.
+        function Counter(){
+            //const count = React.useState(0);
+            //useState(0)-> 0 is the intial value of that state variable
+            const [count, setCount] = React.useState(0);// this line executes only one time
+            // count = 0, is the state variable, which is meant that count is overview by React algo.
+            const increment = ()=>{
+                console.log("Incremented");//when ever this function is invoked then in console we print the that this function is actually called
+                setCount(count + 1);// here setCount is actually incrementing the state variable count
+                // setCount() actually updates the value of state Variable, count, after update
+                // this count value is chnaged from 0 to the new value.
+            }
+            const decrement = ()=>{
+                console.log("Decremented");
+                setCount(count - 1);
+            }
+            return <div className="counter">
+                    <button onClick={increment}>+</button>
+                    <span className="count">{count}</span>
+                    <button onClick={decrement}>-</button>
+                </div>
+        }
+       
+        ReactDOM.render(<Counter></Counter>, document.getElementById("root"));
+    </script>
+</body>
+</html>
+<!--
+1) When ever you are building anything in React, build it in Static website form
+-->
