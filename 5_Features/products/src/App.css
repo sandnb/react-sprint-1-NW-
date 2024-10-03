@@ -41,7 +41,7 @@ body {
   background-color: transparent;
 }
 
-
+/*Prodcuts section*/
 
 .product_wrapper {
   margin-top: 3rem;
@@ -67,4 +67,24 @@ body {
   height: 200px;
   aspect-ratio: 3/4;
   text-align: center;
+}
+
+.pagination{
+  display: flex;
+  height: 3rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.pagenum{
+  padding: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.navbar{
+  display: flex;
+  height: 3rem;
+  justify-content: space-evenly;
+  align-items: center;
 }
