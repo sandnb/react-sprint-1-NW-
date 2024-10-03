@@ -1,4 +1,5 @@
-import {useState, useContext ,React} from "react";
+import React from "react";
+import {useState, useContext} from "react";
 
 
 const PaginationContext = React.createContext();
