@@ -24,3 +24,11 @@
     * Third party JS library for state management
     * It gives features known as store -> where we store all the state variables
     * It also provides centralized state management with help of features known : slice
+
+### Principles of Redux
+    * Single Source of the Truth -> we can only have one store in whole app. we can
+                                    have multiple slices
+    * State is Read only -> when you want to update the state, then we have to
+                            dispatch a "action" on object that describes what happend
+    * Changes are made by pure functions -> To specify how to change a state 
+                                            action is passed to the reducer function
