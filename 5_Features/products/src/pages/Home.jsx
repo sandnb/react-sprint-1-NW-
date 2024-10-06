@@ -3,10 +3,10 @@ import { FaArrowAltCircleUp } from "react-icons/fa";
 import { FaArrowAltCircleDown } from "react-icons/fa";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import { MdKeyboardArrowRight } from "react-icons/md";
-import ProductList from './ProductList';
-import Categories from './Categories';
-import basicOps from './utility/basicOps';
-import { usePaginationContext } from './contexts/PaginationContext';
+import ProductList from '../components/ProductList';
+import Categories from '../components/Categories';
+import basicOps from '../utility/basicOps';
+import { usePaginationContext } from '../contexts/PaginationContext';
 
 
 
